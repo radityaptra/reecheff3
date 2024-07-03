@@ -1,120 +1,164 @@
 <template>
   <div class="container">
-    <h1>REECHEFF</h1>
-    <nav>
-      <nuxt-link to="/">Beranda</nuxt-link>
-      <nuxt-link to="/profile">Profil</nuxt-link>
-      <nuxt-link to="/upload">Unggah Resep</nuxt-link>
-    </nav>
-
-    <section>
-      <h2>Resep Terbaru</h2>
-      <div class="section-content">
-      </div>
-      <h2>Resep Populer</h2>
-      <div class="section-content">
-        <!-- Tambahkan resep populer di sini -->
-      </div>
-    </section>
+    <header>
+      <h1>REECHEFF</h1>
+      <nav>
+        <nuxt-link to="/">Beranda</nuxt-link>
+        <nuxt-link to="/search">Pencarian</nuxt-link>
+        <nuxt-link to="/upload">Unggah Resep</nuxt-link>
+        <nuxt-link to="/profile">Profil</nuxt-link>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h2>Resep Terbaru</h2>
+        <div class="section-content">
+          <nuxt-link to="/recipe/mie-aceh" class="recipe-card">
+            <img src="/assets/mie aceh.jpg" alt="Mie Aceh">
+            <h3>Mie Aceh</h3>
+            <p>Mie Aceh adalah makanan yang berasal dari Aceh.</p>
+          </nuxt-link>
+          <nuxt-link to="/recipe/ketoprak" class="recipe-card">
+            <img src="/assets/ketoprak.jpg" alt="Ketoprak">
+            <h3>Ketoprak</h3>
+            <p>Ketoprak adalah makanan dari Jawa Barat.</p>
+          </nuxt-link>
+          <nuxt-link to="/recipe/sup-ayam" class="recipe-card">
+            <img src="/assets/sup ayam.jpg" alt="Sup Ayam">
+            <h3>Sup Ayam</h3>
+            <p>Sup Ayam adalah makanan dari Bali.</p>
+          </nuxt-link>
+        </div>
+        <h2>Resep Populer</h2>
+        <div class="section-content">
+          <nuxt-link to="/recipe/bika-ambon" class="recipe-card">
+            <img src="/assets/bika ambon.jpg" alt="Bika Ambon">
+            <h3>Bika Ambon</h3>
+            <p>Bika Ambon adalah makanan dari Medan.</p>
+          </nuxt-link>
+          <nuxt-link to="/recipe/gudeg" class="recipe-card">
+            <img src="/assets/gudeg.jpeg" alt="Gudeg">
+            <h3>Gudeg</h3>
+            <p>Gudeg adalah makanan dari Yogyakarta.</p>
+          </nuxt-link>
+          <nuxt-link to="/recipe/kerak-telur" class="recipe-card">
+            <img src="/assets/kerak telur.jpg" alt="Kerak Telur">
+            <h3>Kerak Telur</h3>
+            <p>Kerak Telur adalah makanan dari Betawi.</p>
+          </nuxt-link>
+        </div>
+      </section>
+    </main>
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      // Data lainnya jika diperlukan
-    }
-  }
-}
-</script>
-
-<style scoped>
+<style>
 body {
   font-family: 'Helvetica Neue', sans-serif;
-  background: linear-gradient(to right, #ffafbd, #ffc3a0);
+  background-color: #fff;
   margin: 0;
   padding: 0;
   color: #333;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
+header {
+  background-color: #ff6600;
   padding: 20px;
+  color: #ffffff;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-  color: #ff6600;
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 3em;
-  text-shadow: 1px 1px 2px #fff;
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+  text-shadow: 1px 1px 2px #333;
 }
 
 nav {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 30px;
+  margin-top: 10px;
 }
 
 nav a {
   color: #ffffff;
-  background-color: #ff6600;
+  background-color: #cc5200;
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 20px;
   transition: background-color 0.3s, transform 0.3s;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 10px;
 }
 
 nav a:hover {
-  background-color: #cc5200;
+  background-color: #b34700;
   transform: scale(1.05);
 }
 
-section h2 {
-  color: #ff6600;
+main {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+section {
   margin-top: 20px;
-  border-bottom: 2px solid #ff6600;
-  padding-bottom: 5px;
+}
+
+h2 {
   font-size: 2em;
+  color: #cc5200;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .section-content {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  justify-content: center;
 }
 
 .recipe-card {
-  background-color: #ffffff;
-  border-radius: 5px;
-  padding: 10px;
+  background: #fff;
+  border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
-  flex: 1 1 30%;
-}
-
-.recipe-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: 300px;
 }
 
 .recipe-card img {
   width: 100%;
-  height: 200px; /* Tambahkan tinggi tetap untuk gambar */
-  object-fit: cover; /* Gunakan object-fit untuk memastikan gambar tetap proporsional */
-  border-radius: 5px;
+  height: 200px;
+  object-fit: cover;
 }
 
 .recipe-card h3 {
+  font-size: 1.5em;
+  color: #333;
   margin: 10px 0;
-  color: #ff6600;
 }
 
 .recipe-card p {
-  color: #666;
+  font-size: 1em;
+  color: #777;
+  margin: 0 10px 10px;
+}
+
+.recipe-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+  background-color: #ff6600;
+  padding: 10px;
+  color: #ffffff;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
 </style>
